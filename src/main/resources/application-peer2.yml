@@ -8,6 +8,7 @@ spring:
 eureka:
   instance:
     hostname: peer2
+
   server:
       enable-self-preservation: false
       eviction-interval-timer-in-ms: 20000   # 清理间隔（单位毫秒，默认是60*1000）
