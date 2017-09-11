@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+
+
+eureka:
+  instance:
+    hostname: peer1
+
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 20000   # 清理间隔（单位毫秒，默认是60*1000）
+
+
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://peer2:8762/eureka/
