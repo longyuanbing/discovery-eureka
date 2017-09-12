@@ -9,7 +9,7 @@ eureka:
   instance:
     hostname: discovery         # 指定该Eureka实例的主机名
   server:
-    enable-self-preservation: true
+    enable-self-preservation: true         # 开启自我保护模式
     eviction-interval-timer-in-ms: 20000   # 清理间隔（单位毫秒，默认是60*1000）
 
   client:
