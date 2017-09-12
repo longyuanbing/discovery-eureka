@@ -5,6 +5,13 @@ spring:
   application:
     name: eureka-server
 
+security:    # eureka安全认证
+  basic:
+    enabled: true
+  user:
+    name: admin  # 用户名
+    password: admin123456   # 用户密码
+
 eureka:
   instance:
     hostname: discovery         # 指定该Eureka实例的主机名
@@ -16,5 +23,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+
+
 
